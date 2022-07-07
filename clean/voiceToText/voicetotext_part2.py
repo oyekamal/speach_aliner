@@ -20,7 +20,7 @@ def get_large_audio_transcription(path):
     # split audio sound where silence is 700 miliseconds or more and get chunks
     chunks = split_on_silence(sound,
         # experiment with this value for your target audio file
-        min_silence_len = 500,
+        min_silence_len = 300,
         # adjust this per requirement
         silence_thresh = sound.dBFS-14,
         # keep the silence for 1 second, adjustable as well
@@ -53,3 +53,5 @@ def get_large_audio_transcription(path):
     return whole_text
 data = get_large_audio_transcription('jamal_voice.wav')
 print(data)
+
+# Hello this is. Test number 1. My name is mohammed jalal. Ok. Get it. Aadha urdu mein kya kahana chah raha tha. Ke. Mera naam jo hai vah jalal hai. Ok. Punjabi gana. 
