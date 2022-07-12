@@ -59,8 +59,16 @@ green_eye = cv2.imread('green_eye.png', cv2.IMREAD_UNCHANGED)
 result = cv2.matchTemplate(eyes_img, pupil_img, cv2.TM_CCOEFF_NORMED)
 w = pupil_img.shape[1]
 h = pupil_img.shape[0]
-threshold = .40
+threshold = .4
 yloc, xloc = np.where(result >= threshold)
+location_check = []
 for (x, y) in zip(xloc, yloc):
-    img_rgb = image_overlay_second_method(eyes_img, green_eye, location=(x,y), min_thresh=0, is_transparent=True)
+    if len(location_check) == 0: 
+        location_check.append([x, y])
+        img_rgb = image_overlay_second_method(eyes_img, green_eye, location=(x,y), min_thresh=0, is_transparent=True)
+
+    elif abs(location_check[-1][0]-x) > 10 or abs(location_check[-1][1]-y) > 10:
+        location_check.append([x, y])
+        img_rgb = image_overlay_second_method(eyes_img, green_eye, location=(x,y), min_thresh=0, is_transparent=True)
+print(location_check)
 cv2.imwrite('result.png', img_rgb)
