@@ -65,10 +65,10 @@ location_check = []
 for (x, y) in zip(xloc, yloc):
     if len(location_check) == 0: 
         location_check.append([x, y])
-        img_rgb = image_overlay_second_method(eyes_img, green_eye, location=(x,y), min_thresh=0, is_transparent=True)
+        img_rgb = image_overlay_second_method(eyes_img, blue_img, location=(x,y), min_thresh=0, is_transparent=True)
 
-    elif abs(location_check[-1][0]-x) > 10 or abs(location_check[-1][1]-y) > 10:
+    elif abs(location_check[-1][0]-x) > 40 or abs(location_check[-1][1]-y) > 40:
         location_check.append([x, y])
-        img_rgb = image_overlay_second_method(eyes_img, green_eye, location=(x,y), min_thresh=0, is_transparent=True)
+        img_rgb = image_overlay_second_method(eyes_img, blue_img, location=(x,y), min_thresh=0, is_transparent=True)
 print(location_check)
 cv2.imwrite('result.png', img_rgb)
