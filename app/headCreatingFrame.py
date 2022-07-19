@@ -8,11 +8,11 @@ from code.editImage.addingImages import adding_image
 
 
 def adding_eyes_and_mouth(face_path, eye_path, mouth_path):
-    face = face_path
+    face = Image.open(face_path)
 
-    eye = eye_path
+    eye = Image.open(eye_path)
 
-    mouth = mouth_path
+    mouth = Image.open(mouth_path)
 
     im  = np.array(face.convert('RGB'))
 
@@ -33,10 +33,10 @@ def adding_eyes_and_mouth(face_path, eye_path, mouth_path):
 
 
 # #  #how to use this function:
-face = Image.open(r"./images/head/character_1.png") 
+face = "./images/head/character_1.png"
 
-eye = Image.open(r"./images/side_eyes/content side main M.png")
+eye = "./images/side_eyes/content side main M.png"
 
-mouth = Image.open(r"./images/mouth/character_1/mouth_happy/th_h.png")
+mouth = "./images/mouth/character_1/mouth_happy/th_h.png"
 
 new = adding_eyes_and_mouth(face, eye, mouth)
