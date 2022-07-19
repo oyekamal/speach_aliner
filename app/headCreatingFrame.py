@@ -26,7 +26,7 @@ def adding_eyes_and_mouth(face_path, eye_path, mouth_path):
     new_image = adding_image(face, eye, location=(x,y))
     new_image = adding_image(new_image, mouth, location=(111,322), mirror=True)
     new_image.show()
-    new_image.save('new_G.png')
+    new_image.save('./frames/headFrames/new_G.png')
     return new_image
 
 
