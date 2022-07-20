@@ -7,7 +7,7 @@ from code.editImage.addingImages import adding_image
 
 
 
-def adding_eyes_and_mouth(face_path, eye_path, mouth_path):
+def adding_eyes_and_mouth(face_path, eye_path, mouth_path, frame_name):
     face = Image.open(face_path)
 
     eye = Image.open(eye_path)
@@ -25,18 +25,18 @@ def adding_eyes_and_mouth(face_path, eye_path, mouth_path):
 
     new_image = adding_image(face, eye, location=(x,y))
     new_image = adding_image(new_image, mouth, location=(111,322), mirror=True)
-    new_image.show()
-    new_image.save('./frames/headFrames/new_G.png')
-    return new_image
+    # new_image.show()
+    new_image.save(f'./frames/headFrames/{frame_name}.png')
+    # return new_image
 
 
 
 
 # #  #how to use this function:
-face = "./images/head/character_1.png"
+# face = "./images/head/character_1.png"
 
-eye = "./images/side_eyes/content side main M.png"
+# eye = "./images/side_eyes/content side main M.png"
 
-mouth = "./images/mouth/character_1/mouth_happy/th_h.png"
+# mouth = "./images/mouth/character_1/mouth_happy/th_h.png"
 
-new = adding_eyes_and_mouth(face, eye, mouth)
+# new = adding_eyes_and_mouth(face, eye, mouth)
