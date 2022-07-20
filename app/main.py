@@ -18,7 +18,7 @@ face = "./images/head/character_1.png"
 
 eye = "./images/side_eyes/content side main M.png"
 
-mouth = "./images/mouth/character_1/happy/th_h.png"
+# mouth = "./images/mouth/character_1/happy/th_h.png"
 
 # adding_eyes_and_mouth(face, eye, mouth, "test")
 
