@@ -12,7 +12,7 @@ with open(file_name, 'r') as f:
 
 FRAME_PER_SECOUND = 24
 AUDO_END_TIME = data['fragments'][-1]['end']
-EXTRA_TIME = 5
+EXTRA_TIME = 7
 AUDO_END_TIME = math.ceil(  float(AUDO_END_TIME) + EXTRA_TIME)
 
 print("FRAME_PER_SECOUND:" ,  FRAME_PER_SECOUND)
@@ -28,6 +28,29 @@ for each_data in data.get('fragments'):
     each_data['final_frame'] = math.ceil(  float(each_data['end']) * FRAME_PER_SECOUND)
 
     each_data['diff'] = math.ceil(  (each_data['final_frame'] - each_data['init_frame']) / len(each_data['phonemes']))
+
+    
+    number_of_phonemes = len(each_data['phonemes'])
+    if number_of_phonemes < each_data['diff']:
+      equal_diff = each_data['diff'] // number_of_phonemes
+      equal_diff_chck = equal_diff * number_of_phonemes
+
+      phonemes_frame = {each_phoneme:equal_diff for each_phoneme in each_data['phonemes']}
+
+      if equal_diff_chck != each_data['diff']:
+        less_frame = each_data['diff'] - int(equal_diff_chck)
+        phonemes_frame[list(phonemes_frame.keys())[-1]] = less_frame
+
+    else:
+      phonemes_frame = {}
+      limited_frame = each_data['diff']
+      for each_phoneme in each_data['phonemes']:
+        if limited_frame > 0:
+          phonemes_frame[each_phoneme] = 1
+          limited_frame -= 1
+        else:
+          phonemes_frame[each_phoneme] = 0
+    each_data["phonemes_frame"] = phonemes_frame
 
 
 data['FRAME_PER_SECOUND'] = FRAME_PER_SECOUND
