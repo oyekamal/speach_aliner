@@ -24,7 +24,7 @@
       "init_frame": 29,
       "final_frame": 39,
       "diff": 4,
-      "phonemes_frame": { "DH": 1, "IH1": 1, "S": 1 }
+      "phonemes_frame": { "DH": 2, "IH1": 1, "S": 1 }
     },
     {
       "begin": "1.600",
@@ -161,7 +161,7 @@
       "init_frame": 124,
       "final_frame": 147,
       "diff": 8,
-      "phonemes_frame": { "OW1": 2, "K": 2, "EY1": 2 }
+      "phonemes_frame": { "OW1": 3, "K": 3, "EY1": 2 }
     },
     {
       "begin": "6.120",
@@ -174,7 +174,7 @@
       "init_frame": 147,
       "final_frame": 158,
       "diff": 4,
-      "phonemes_frame": { "G": 1, "EH1": 1, "T": 1 }
+      "phonemes_frame": { "G": 2, "EH1": 1, "T": 1 }
     },
     {
       "begin": "6.560",
@@ -239,7 +239,7 @@
       "init_frame": 169,
       "final_frame": 183,
       "diff": 7,
-      "phonemes_frame": { "M": 3, "AA1": 1 }
+      "phonemes_frame": { "M": 4, "AA1": 3 }
     },
     {
       "begin": "7.600",
@@ -252,7 +252,7 @@
       "init_frame": 183,
       "final_frame": 196,
       "diff": 7,
-      "phonemes_frame": { "Y": 3, "AA1": 1 }
+      "phonemes_frame": { "Y": 4, "AA1": 3 }
     },
     {
       "begin": "8.160",
@@ -278,7 +278,7 @@
       "init_frame": 223,
       "final_frame": 240,
       "diff": 9,
-      "phonemes_frame": { "CH": 4, "AA1": 1 }
+      "phonemes_frame": { "CH": 5, "AA1": 4 }
     },
     {
       "begin": "10.000",
@@ -304,7 +304,7 @@
       "init_frame": 254,
       "final_frame": 275,
       "diff": 11,
-      "phonemes_frame": { "DH": 5, "EY1": 1 }
+      "phonemes_frame": { "DH": 6, "EY1": 5 }
     },
     {
       "begin": "11.440",
@@ -317,7 +317,7 @@
       "init_frame": 275,
       "final_frame": 288,
       "diff": 7,
-      "phonemes_frame": { "K": 3, "IY1": 1 }
+      "phonemes_frame": { "K": 4, "IY1": 3 }
     },
     {
       "begin": "12.000",
@@ -330,7 +330,7 @@
       "init_frame": 288,
       "final_frame": 315,
       "diff": 7,
-      "phonemes_frame": { "M": 1, "EH1": 1, "R": 1, "AH0": 3 }
+      "phonemes_frame": { "M": 2, "EH1": 2, "R": 2, "AH0": 1 }
     },
     {
       "begin": "13.120",
@@ -343,7 +343,7 @@
       "init_frame": 315,
       "final_frame": 328,
       "diff": 5,
-      "phonemes_frame": { "N": 1, "AA1": 1, "M": 2 }
+      "phonemes_frame": { "N": 2, "AA1": 2, "M": 1 }
     },
     {
       "begin": "13.640",
@@ -408,7 +408,7 @@
       "init_frame": 348,
       "final_frame": 357,
       "diff": 5,
-      "phonemes_frame": { "HH": 2, "AY1": 1 }
+      "phonemes_frame": { "HH": 3, "AY1": 2 }
     },
     {
       "begin": "14.840",
@@ -447,7 +447,7 @@
       "init_frame": 369,
       "final_frame": 382,
       "diff": 5,
-      "phonemes_frame": { "EY1": 1, "G": 1, "EY2": 2 }
+      "phonemes_frame": { "EY1": 2, "G": 2, "EY2": 1 }
     },
     {
       "begin": "15.880",
@@ -460,7 +460,7 @@
       "init_frame": 382,
       "final_frame": 391,
       "diff": 5,
-      "phonemes_frame": { "K": 2, "AA1": 1 }
+      "phonemes_frame": { "K": 3, "AA1": 2 }
     },
     {
       "begin": "16.280",

@@ -32,14 +32,20 @@ for each_data in data.get('fragments'):
     
     number_of_phonemes = len(each_data['phonemes'])
     if number_of_phonemes < each_data['diff']:
-      equal_diff = each_data['diff'] // number_of_phonemes
-      equal_diff_chck = equal_diff * number_of_phonemes
+      phonemes_frame = {}
+      num, div = each_data['diff'], number_of_phonemes
+      count_frame = [num // div + (1 if x < num % div else 0)  for x in range (div)]
 
-      phonemes_frame = {each_phoneme:equal_diff for each_phoneme in each_data['phonemes']}
+      for i in range(len(count_frame)):
+        phonemes_frame[each_data['phonemes'][i]] = count_frame[i]
+      # equal_diff = each_data['diff'] // number_of_phonemes
+      # equal_diff_chck = equal_diff * number_of_phonemes
 
-      if equal_diff_chck != each_data['diff']:
-        less_frame = each_data['diff'] - int(equal_diff_chck)
-        phonemes_frame[list(phonemes_frame.keys())[-1]] = less_frame
+      # phonemes_frame = {each_phoneme:equal_diff for each_phoneme in each_data['phonemes']}
+
+      # if equal_diff_chck != each_data['diff']:
+      #   less_frame = each_data['diff'] - int(equal_diff_chck)
+      #   phonemes_frame[list(phonemes_frame.keys())[-1]] = less_frame
 
     else:
       phonemes_frame = {}
