@@ -3,14 +3,17 @@ import numpy as np
 import statistics
 
 
-def adding_image(img_bg, img_fg, location, size = 30, rotation=0, mirror=False):
+def adding_image(img_bg, img_fg, location, size = 30, rotation=0, mirror=False, size_cordinates=None):
     
     """ PIL import image required not openCV. this function is responsiable for adding image, size and rotating it """
-    width, height = img_fg.size
-    scale_percent = size # percent of original size
-    width = int(width * scale_percent / 100)
-    height = int(height * scale_percent / 100)
-    dim = (width, height)
+    if size_cordinates is not None:
+        dim = size_cordinates
+    else:
+        width, height = img_fg.size
+        scale_percent = size # percent of original size
+        width = int(width * scale_percent / 100)
+        height = int(height * scale_percent / 100)
+        dim = (width, height)
 
     if mirror:
         img_fg = ImageOps.mirror(img_fg)

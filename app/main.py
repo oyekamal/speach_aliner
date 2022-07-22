@@ -7,8 +7,8 @@ from headCreatingFrame import adding_eyes_and_mouth
 from code.utils.utils import path_creation_for_mouth, path_creation_for_eyes
 import random
   
-f = open('phonemes_json.json')
-frame_data = open('jamal_phonemes.json')
+f = open('./json/phonemes_json.json')
+frame_data = open('./json/jamal_phonemes.json')
 
 phonemes = json.load(f)
 frames_json = json.load(frame_data)
@@ -17,7 +17,6 @@ frames_json = json.load(frame_data)
 
 face = "./images/head/character_1.png"
 
-# eye = "./images/side_eyes/content side main M.png"
 # eye = path_creation_for_eyes(1, "blinking", "happy", False, "L")
 
 # print(eye)

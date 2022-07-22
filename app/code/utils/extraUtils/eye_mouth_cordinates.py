@@ -12,8 +12,10 @@ clean_mouth_json = {}
 for each_eye_key, value in df['eye_name'].items():
     print(value)
     if value != 'nan':
-        clean_eye_json[value] = {"eye_size": df['eye_size'][each_eye_key],"eye_location": df['eye_location'][each_eye_key] }
-
+        try:
+            clean_eye_json[value] = {"eye_size": [int(i) for i in df['eye_size'][each_eye_key].split(",")],"eye_location": [int(i) for i in  df['eye_location'][each_eye_key].split(",")] }
+        except:
+            pass
 
 
 with open("eyes_cordinations.json", "w") as outfile:
@@ -23,7 +25,7 @@ with open("eyes_cordinations.json", "w") as outfile:
 for each_eye_key, value in df['imouth_name'].items():
     print(value)
     if value != 'nan':
-        clean_mouth_json[value] = {"mouth_size": df['mouth_size'][each_eye_key],"mouth_location": df['mouth_location'][each_eye_key] }
+        clean_mouth_json[value] = {"mouth_size": [int(i) for i in  df['mouth_size'][each_eye_key].split(",")],"mouth_location": [int(i) for i in  df['mouth_location'][each_eye_key].split(",")] }
 
 
 
