@@ -20,18 +20,20 @@ def convert_frames_to_video(pathIn,pathOut,fps):
     # files.sort(key = lambda x: int(x[5:-4]))
 
     for each_fagment in frame_data['fragments']:
-        
+        for key, value in each_fagment["phonemes_frame"].items():
+            print(key, '  ', value)
+            for number in range(int(value)):
+                # print(number)
+                files = each_fagment['id'] + "_" +  str(key) + '.png'
+                print(files)
 
-
-    for i in range(len(files)):
-        filename=pathIn + files[i]
-        #reading each files
-        img = cv2.imread(filename)
-        height, width, layers = img.shape
-        size = (width,height)
-        print(filename)
-        #inserting the frames into an image array
-        frame_array.append(img)
+                filename=pathIn + files
+                img = cv2.imread(filename)
+                height, width, layers = img.shape
+                size = (width,height)
+                print(filename)
+                #inserting the frames into an image array
+                frame_array.append(img)
 
     out = cv2.VideoWriter(pathOut,cv2.VideoWriter_fourcc(*'DIVX'), fps, size)
 

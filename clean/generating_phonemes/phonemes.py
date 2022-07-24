@@ -12,7 +12,7 @@ with open(file_name, 'r') as f:
 
 FRAME_PER_SECOUND = 24
 AUDO_END_TIME = data['fragments'][-1]['end']
-EXTRA_TIME = 7
+EXTRA_TIME = 0
 AUDO_END_TIME = math.ceil(  float(AUDO_END_TIME) + EXTRA_TIME)
 
 print("FRAME_PER_SECOUND:" ,  FRAME_PER_SECOUND)
@@ -27,8 +27,8 @@ for each_data in data.get('fragments'):
     each_data['init_frame'] = math.ceil(  float(each_data['begin']) * FRAME_PER_SECOUND )
     each_data['final_frame'] = math.ceil(  float(each_data['end']) * FRAME_PER_SECOUND)
 
-    each_data['diff'] = math.ceil(  (each_data['final_frame'] - each_data['init_frame']) / len(each_data['phonemes']))
-
+    # each_data['diff'] = math.floor(  (each_data['final_frame'] - each_data['init_frame']) / len(each_data['phonemes']))
+    each_data['diff'] = math.ceil(  (each_data['final_frame'] - each_data['init_frame']))
     
     number_of_phonemes = len(each_data['phonemes'])
     if number_of_phonemes < each_data['diff']:
@@ -61,7 +61,7 @@ for each_data in data.get('fragments'):
 
 data['FRAME_PER_SECOUND'] = FRAME_PER_SECOUND
 data['AUDO_END_TIME'] = AUDO_END_TIME
-data['TOTAL_VIDEO_FRAMES'] = AUDO_END_TIME * FRAME_PER_SECOUND
+data['TOTAL_VIDEO_FRAMES'] = AUDO_END_TIME * FRAME_PER_SECOUND + 1
 
 with open(file_name.split('.')[0]+"_phonemes.json", "w") as outfile:
     json.dump(data, outfile)
