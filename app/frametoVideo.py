@@ -43,7 +43,7 @@ def convert_frames_to_video(pathIn,pathOut,fps):
 
 def main():
     pathIn= './frames/headFrames/'
-    pathOut = 'video.mp4'
+    pathOut = 'video2.avi'
     fps = 24.0
     convert_frames_to_video(pathIn, pathOut, fps)
 

@@ -27,17 +27,17 @@
       "phonemes_frame": { "DH": 2, "IH1": 2, "S": 2 }
     },
     {
-      "begin": 4.53,
+      "begin": 1.53,
       "children": [],
-      "end": 4.73,
+      "end": 1.9,
       "id": "f000003",
       "language": "eng",
       "lines": ["is"],
       "phonemes": ["IH1", "Z"],
-      "init_frame": 109,
-      "final_frame": 114,
-      "diff": 5,
-      "phonemes_frame": { "IH1": 3, "Z": 2 }
+      "init_frame": 37,
+      "final_frame": 46,
+      "diff": 9,
+      "phonemes_frame": { "IH1": 5, "Z": 4 }
     },
     {
       "begin": 2.12,
@@ -138,30 +138,30 @@
       }
     },
     {
-      "begin": 14.49,
+      "begin": 5.19,
       "children": [],
-      "end": 14.84,
+      "end": 5.54,
       "id": "f000011",
       "language": "eng",
       "lines": ["jalal"],
       "phonemes": ["Y", "AA1", "L", "AA0"],
-      "init_frame": 348,
-      "final_frame": 357,
-      "diff": 9,
-      "phonemes_frame": { "Y": 3, "AA1": 2, "L": 2, "AA0": 2 }
+      "init_frame": 125,
+      "final_frame": 133,
+      "diff": 8,
+      "phonemes_frame": { "Y": 2, "AA1": 2, "L": 2, "AA0": 2 }
     },
     {
-      "begin": 15.29,
+      "begin": 6.57,
       "children": [],
-      "end": 15.59,
+      "end": 6.98,
       "id": "f000012",
       "language": "eng",
       "lines": ["Ok"],
       "phonemes": ["OW1", "K", "EY1"],
-      "init_frame": 367,
-      "final_frame": 375,
-      "diff": 8,
-      "phonemes_frame": { "OW1": 3, "K": 3, "EY1": 2 }
+      "init_frame": 158,
+      "final_frame": 168,
+      "diff": 10,
+      "phonemes_frame": { "OW1": 4, "K": 3, "EY1": 3 }
     },
     {
       "begin": 7.59,

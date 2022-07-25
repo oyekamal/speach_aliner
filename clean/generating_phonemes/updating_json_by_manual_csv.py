@@ -9,18 +9,23 @@ data_json = open('jamal.json')
 data_json = json.load(data_json)
 
 
-df= df.to_dict()
-df_dict ={}
-for key, value in df['word'].items():
-    df_dict[value.strip()] = {"start": df['init'][key], "end": df['final'][key]}
+for line in df.itertuples():
+    print(line[0])
+
+    data_json['fragments'][line[0]]["begin"] = line[2]
+    data_json['fragments'][line[0]]["end"] = line[3]
+# df= df.to_dict()
+# df_dict ={}
+# for key, value in df['word'].items():
+#     df_dict[value.strip()] = {"start": df['init'][key], "end": df['final'][key]}
 
 
-print(df_dict)
+# print(df_dict)
 
 
-for each_data in data_json.get('fragments'):
-    each_data["begin"] = df_dict[each_data['lines'][0]]['start']
-    each_data["end"] = df_dict[each_data['lines'][0]]['end']
+# for each_data in data_json.get('fragments'):
+#     each_data["begin"] = df_dict[each_data['lines'][0]]['start']
+#     each_data["end"] = df_dict[each_data['lines'][0]]['end']
 
 
 with open('jamal.json', 'w') as f:

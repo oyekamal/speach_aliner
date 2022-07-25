@@ -58,6 +58,7 @@ while frame_counter <= frames_json['TOTAL_VIDEO_FRAMES']:
 
         if frame_counter >= each_fagment['init_frame'] and frame_counter <= each_fagment['final_frame']:
             print(frame_counter," matched with ")
+            print(each_fagment['lines'])
             for phoneme, number_of_frame in each_fagment['phonemes_frame'].items():
                 print(phoneme ," : ", number_of_frame)  
                 if phonemes.get(phoneme):
@@ -66,9 +67,9 @@ while frame_counter <= frames_json['TOTAL_VIDEO_FRAMES']:
                     mouth_path = path_creation_for_mouth(1, emotion)
                     mouth_path = mouth_path + phonem_dic[emotion]
 
-                    blinking_choice = random.choice(["blinking", "not_blinking"])
-                    intensity_choice = random.choice([True, False])
-                    eyes_position_choice = random.choice(["L", "R", "M"])
+                    blinking_choice = random.choice([ "not_blinking"])
+                    intensity_choice = random.choice([True])
+                    eyes_position_choice = random.choice(["M"])
                     eyes_emotion_choice = random.choice(["happy", "content"])
 
                     eye = path_creation_for_eyes(1, blinking_choice, eyes_emotion_choice, intensity_choice, eyes_position_choice)
@@ -80,11 +81,11 @@ while frame_counter <= frames_json['TOTAL_VIDEO_FRAMES']:
 
     print(frame_counter)
     mouth_path = path_creation_for_mouth(1, emotion)
-    mouth_path = "./images/mouth/mouth_expression/content_2.png"
+    mouth_path = "./images/mouth/character_1/happy/m_b_close_h.png"
 
-    blinking_choice = random.choice(["blinking", "not_blinking"])
+    blinking_choice = random.choice(["blinking"])
     # intensity_choice = random.choice([False])
-    eyes_position_choice = random.choice(["L", "R", "M"])
+    eyes_position_choice = random.choice(["M"])
     eyes_emotion_choice = random.choice([ "happy"])
     
     eye = path_creation_for_eyes(1, blinking_choice, eyes_emotion_choice, True, eyes_position_choice)
