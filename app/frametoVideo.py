@@ -18,22 +18,21 @@ def convert_frames_to_video(pathIn,pathOut,fps):
 
     #for sorting the file names properly
     # files.sort(key = lambda x: int(x[5:-4]))
+    
 
-    for each_fagment in frame_data['fragments']:
-        for key, value in each_fagment["phonemes_frame"].items():
-            print(key, '  ', value)
-            for number in range(int(value)):
+    for counter in range(frame_data['TOTAL_VIDEO_FRAMES']):
+
                 # print(number)
-                files = each_fagment['id'] + "_" +  str(key) + '.png'
-                print(files)
+            files = str(counter) + '.png'
+            print(files)
 
-                filename=pathIn + files
-                img = cv2.imread(filename)
-                height, width, layers = img.shape
-                size = (width,height)
-                print(filename)
-                #inserting the frames into an image array
-                frame_array.append(img)
+            filename=pathIn + files
+            img = cv2.imread(filename)
+            height, width, layers = img.shape
+            size = (width,height)
+            print(filename)
+            #inserting the frames into an image array
+            frame_array.append(img)
 
     out = cv2.VideoWriter(pathOut,cv2.VideoWriter_fourcc(*'DIVX'), fps, size)
 
@@ -44,7 +43,7 @@ def convert_frames_to_video(pathIn,pathOut,fps):
 
 def main():
     pathIn= './frames/headFrames/'
-    pathOut = 'video.avi'
+    pathOut = 'video.mp4'
     fps = 24.0
     convert_frames_to_video(pathIn, pathOut, fps)
 

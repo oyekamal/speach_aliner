@@ -8,7 +8,7 @@ from code.utils.utils import path_creation_for_mouth, path_creation_for_eyes
 import random
   
 f = open('./json/phonemes_json.json')
-frame_data = open('./json/jamal_phonemes.json')
+frame_data = open('./json/json_data_for_frame/jamal_phonemes.json')
 
 phonemes = json.load(f)
 frames_json = json.load(frame_data)
