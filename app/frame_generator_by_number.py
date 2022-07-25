@@ -55,9 +55,11 @@ frame_counter = 0
 
 while frame_counter <= frames_json['TOTAL_VIDEO_FRAMES']:
     for each_fagment in frames_json['fragments']:
-        if frame_counter >= each_fagment['init_frame'] and frame_counter <= each_fagment['final_frame']:
 
+        if frame_counter >= each_fagment['init_frame'] and frame_counter <= each_fagment['final_frame']:
+            print(frame_counter," matched with ")
             for phoneme, number_of_frame in each_fagment['phonemes_frame'].items():
+                print(phoneme ," : ", number_of_frame)  
                 if phonemes.get(phoneme):
                     phonem_dic = phonemes.get(phoneme)
 
@@ -76,18 +78,17 @@ while frame_counter <= frames_json['TOTAL_VIDEO_FRAMES']:
                         adding_eyes_and_mouth(face, eye, mouth_path, frame_counter)
                         frame_counter += 1
 
-        else:
-            print(frame_counter)
-            # mouth_path = path_creation_for_mouth(1, emotion)
-            mouth_path = "./images/mouth/mouth_expression/content_2.png"
+    print(frame_counter)
+    mouth_path = path_creation_for_mouth(1, emotion)
+    mouth_path = "./images/mouth/mouth_expression/content_2.png"
 
-            blinking_choice = random.choice(["blinking", "not_blinking"])
-            # intensity_choice = random.choice([False])
-            eyes_position_choice = random.choice(["L", "R", "M"])
-            eyes_emotion_choice = random.choice([ "happy"])
-            
-            eye = path_creation_for_eyes(1, blinking_choice, eyes_emotion_choice, True, eyes_position_choice)
+    blinking_choice = random.choice(["blinking", "not_blinking"])
+    # intensity_choice = random.choice([False])
+    eyes_position_choice = random.choice(["L", "R", "M"])
+    eyes_emotion_choice = random.choice([ "happy"])
+    
+    eye = path_creation_for_eyes(1, blinking_choice, eyes_emotion_choice, True, eyes_position_choice)
 
-            frame_counter += 1
-            adding_eyes_and_mouth(face, eye, mouth_path, frame_counter)
-        
+    
+    adding_eyes_and_mouth(face, eye, mouth_path, frame_counter)
+    frame_counter += 1
